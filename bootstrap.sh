@@ -8,6 +8,8 @@ DOCKER_COMPOSE_VERSION=1.17.1
 TERRAFORM_VERSION=0.11.0
 PACKER_VERSION=1.1.2
 VAULT_VERSION=0.9.0
+HELM_VERSION=2.7.2
+KUBECTL_VERSION=1.8.0
 
 ## Prerequisites
 
@@ -66,6 +68,16 @@ apt-get install -y --no-install-recommends software-properties-common
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 apt-get update
 apt-get install -y --no-install-recommends ansible python-boto
+
+echo "--- Installing Helm ... "
+wget --quiet https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz
+tar -xvzf helm-v${HELM_VERSION}-linux-amd64.tar.gz
+cp linux-amd64/helm /usr/local/bin
+
+echo "--- Installing kubectl ... "
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+chmod +x /usr/local/bin/kubectl
 
 ## Add group autonubil & user
 groupadd autonubil
