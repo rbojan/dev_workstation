@@ -1,0 +1,7 @@
+## Global Config
+
+### User (LDAP Username): will be used for Linux user
+USER="somebody"
+
+### Public key
+PUBLIC_KEY="ssh-rsa XXX"
