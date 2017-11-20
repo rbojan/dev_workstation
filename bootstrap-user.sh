@@ -22,3 +22,6 @@ EOF
 fi
 
 echo 'export $(cat .gitlab | xargs)' >> ~/.bashrc
+
+echo 'source <(helm completion bash)' >> ~/.bashrc
+echo 'source <(kubectl completion bash)' >> ~/.bashrc
