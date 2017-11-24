@@ -17,7 +17,7 @@ KUBECTL_VERSION=1.8.0
 apt-get update && apt-get upgrade
 
 ### Global
-apt-get install -y wget curl git unzip ruby
+apt-get install -y wget curl git unzip ruby bash-completion
 
 echo "--- Installing Go ... "
 apt-get install -y --no-install-recommends golang
